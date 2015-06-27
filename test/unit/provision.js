@@ -97,7 +97,7 @@ exports['controller.provisionTessel'] = {
   },
 
   tearDown: function(done) {
-    this.tessel.close();
+    this.tessel.mockClose();
     this.tessel._rps.removeAllListeners();
     this.isProvisioned.restore();
     this.provisionTessel.restore();
@@ -187,7 +187,7 @@ exports['Tessel.prototype.provision'] = {
   },
 
   tearDown: function(done) {
-    this.tessel.close();
+    this.tessel.mockClose();
     this.provision.restore();
     this.setupLocal.restore();
     this.writeFileSpy.restore();
